@@ -2,10 +2,50 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; URL='https://discord.gg/HPh8G2AQ'" />
-  <title>Redirecionando para o Discord...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecionando...</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0d0d0d;
+      color: #00ffff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    .loader {
+      border: 6px solid #222;
+      border-top: 6px solid #00ffff;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+  <script>
+    setTimeout(() => {
+      window.location.href = "https://discord.gg/HPh8G2AQ";
+    }, 3000); // Redireciona após 3 segundos
+  </script>
 </head>
 <body>
-  <p>Redirecionando para o Discord...</p>
+  <h1>BEM VINDO AO USMALKRIADOS💊🤪</h1>
+  <div class="loader"></div>
 </body>
 </html>
