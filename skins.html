@@ -23,7 +23,6 @@
       z-index: 1;
     }
 
-    /* Fundo animado */
     .background {
       position: fixed;
       top: 0;
@@ -57,19 +56,12 @@
       margin-bottom: 20px;
     }
 
-    .skin-images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 20px;
-    }
-
     .skin-images img {
       width: 100%;
-      max-width: 200px;
+      max-width: 250px;
       border-radius: 10px;
       border: 2px solid #00ffff55;
+      margin-bottom: 20px;
     }
 
     .code-block {
@@ -79,7 +71,7 @@
       border: 1px dashed #00ffff;
       border-radius: 5px;
       color: #fff;
-      word-break: break-word; /* para que linhas muito longas quebrem */
+      word-break: break-word;
     }
 
     .code-label {
@@ -108,28 +100,25 @@
 </head>
 <body>
 
-  <!-- Fundo animado -->
   <div class="background"></div>
 
   <h1>Skins Disponíveis 🚛</h1>
-
-  <!-- Container para os skins -->
   <div id="container"></div>
 
   <a href="index.html" class="back">⬅ Voltar</a>
 
   <script>
     const caminhoes = [
-      { nome: "VW Constellation Caçamba Azul", img1: "IMG_5041.jpeg", img2: "IMG_5041.jpeg", camião: "rZkslM7.jpeg", carroceria: "4DvpK6K.jpeg", vidro: "AccQW10.jpeg", prancha: "volvo_prancha.jwk" },
-      { nome: "Scania R500", img1: "scania1.jpg", img2: "scania2.jpg", camião: "scania_cab.jwk", carreta: "scania_carreta.jwk", vidro: "scania_vidro.jwk", prancha: "scania_prancha.jwk" },
-      { nome: "Mercedes-Benz Actros", img1: "actros1.jpg", img2: "actros2.jpg", camião: "mb_cab.jwk", carreta: "mb_carreta.jwk", vidro: "mb_vidro.jwk", prancha: "mb_prancha.jwk" },
-      { nome: "Volvo FH16 750", img1: "fh16_1.jpg", img2: "fh16_2.jpg", camião: "fh16_cab.jwk", carreta: "fh16_carreta.jwk", vidro: "fh16_vidro.jwk", prancha: "fh16_prancha.jwk" },
-      { nome: "Scania 113H", img1: "113h1.jpg", img2: "113h2.jpg", camião: "113h_cab.jwk", carreta: "113h_carreta.jwk", vidro: "113h_vidro.jwk", prancha: "113h_prancha.jwk" },
-      { nome: "DAF XF 105", img1: "daf1.jpg", img2: "daf2.jpg", camião: "daf_cab.jwk", carreta: "daf_carreta.jwk", vidro: "daf_vidro.jwk", prancha: "daf_prancha.jwk" },
-      { nome: "Iveco Stralis", img1: "iveco1.jpg", img2: "iveco2.jpg", camião: "iveco_cab.jwk", carreta: "iveco_carreta.jwk", vidro: "iveco_vidro.jwk", prancha: "iveco_prancha.jwk" },
-      { nome: "MAN TGX", img1: "man1.jpg", img2: "man2.jpg", camião: "man_cab.jwk", carreta: "man_carreta.jwk", vidro: "man_vidro.jwk", prancha: "man_prancha.jwk" },
-      { nome: "Ford Cargo 2842", img1: "ford1.jpg", img2: "ford2.jpg", camião: "ford_cab.jwk", carreta: "ford_carreta.jwk", vidro: "ford_vidro.jwk", prancha: "ford_prancha.jwk" },
-      { nome: "Scania P310", img1: "p310_1.jpg", img2: "p310_2.jpg", camião: "p310_cab.jwk", carreta: "p310_carreta.jwk", vidro: "p310_vidro.jwk", prancha: "p310_prancha.jwk" },
+      { nome: "VW Constellation Caçamba Azul", img1: "IMG_5041.jpeg", caminhao: "rZkslM7.jpeg", carroceria: "4DvpK6K.jpeg", vidro: "AccQW10.jpeg", prancha: "volvo_prancha.jwk" },
+      { nome: "Scania R500", img1: "scania1.jpg", caminhao: "scania_cab.jwk", carroceria: "scania_carreta.jwk", vidro: "scania_vidro.jwk", prancha: "scania_prancha.jwk" },
+      { nome: "Mercedes-Benz Actros", img1: "actros1.jpg", caminhao: "mb_cab.jwk", carroceria: "mb_carreta.jwk", vidro: "mb_vidro.jwk", prancha: "mb_prancha.jwk" },
+      { nome: "Volvo FH16 750", img1: "fh16_1.jpg", caminhao: "fh16_cab.jwk", carroceria: "fh16_carreta.jwk", vidro: "fh16_vidro.jwk", prancha: "fh16_prancha.jwk" },
+      { nome: "Scania 113H", img1: "113h1.jpg", caminhao: "113h_cab.jwk", carroceria: "113h_carreta.jwk", vidro: "113h_vidro.jwk", prancha: "113h_prancha.jwk" },
+      { nome: "DAF XF 105", img1: "daf1.jpg", caminhao: "daf_cab.jwk", carroceria: "daf_carreta.jwk", vidro: "daf_vidro.jwk", prancha: "daf_prancha.jwk" },
+      { nome: "Iveco Stralis", img1: "iveco1.jpg", caminhao: "iveco_cab.jwk", carroceria: "iveco_carreta.jwk", vidro: "iveco_vidro.jwk", prancha: "iveco_prancha.jwk" },
+      { nome: "MAN TGX", img1: "man1.jpg", caminhao: "man_cab.jwk", carroceria: "man_carreta.jwk", vidro: "man_vidro.jwk", prancha: "man_prancha.jwk" },
+      { nome: "Ford Cargo 2842", img1: "ford1.jpg", caminhao: "ford_cab.jwk", carroceria: "ford_carreta.jwk", vidro: "ford_vidro.jwk", prancha: "ford_prancha.jwk" },
+      { nome: "Scania P310", img1: "p310_1.jpg", caminhao: "p310_cab.jwk", carroceria: "p310_carreta.jwk", vidro: "p310_vidro.jwk", prancha: "p310_prancha.jwk" },
     ];
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -142,25 +131,24 @@
           <p class="skin-title"><strong>${cam.nome}</strong></p>
 
           <div class="skin-images">
-            <img src="${cam.img1}" alt="${cam.nome} 1">
-            <img src="${cam.img2}" alt="${cam.nome} 2">
+            <img src="${cam.img1}" alt="${cam.nome}">
           </div>
 
           <div class="code-block">
             <span class="code-label">SKINS CAMIÃO</span>
-            ${cam.camião}
+            ${cam.caminhao}
           </div>
           <div class="code-block">
             <span class="code-label">SKINS CARROCERIA</span>
-            ${cam.carroceria || cam.carreta || ''}
+            ${cam.carroceria || ''}
           </div>
           <div class="code-block">
             <span class="code-label">SKINS VIDRO</span>
-            ${cam.vidro}
+            ${cam.vidro || ''}
           </div>
           <div class="code-block">
             <span class="code-label">SKINS PRANCHA E BANDEIRA</span>
-            ${cam.prancha}
+            ${cam.prancha || ''}
           </div>
         `;
         container.appendChild(div);
