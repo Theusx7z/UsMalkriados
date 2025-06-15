@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skins do Theus</title>
   <style>
     body {
@@ -79,6 +79,7 @@
       border: 1px dashed #00ffff;
       border-radius: 5px;
       color: #fff;
+      word-break: break-word; /* para que linhas muito longas quebrem */
     }
 
     .code-label {
@@ -112,43 +113,60 @@
 
   <h1>Skins Disponíveis 🚛</h1>
 
-  <!-- Lista dos caminhões -->
+  <!-- Container para os skins -->
+  <div id="container"></div>
+
+  <a href="index.html" class="back">⬅ Voltar</a>
+
   <script>
     const caminhoes = [
-      { nome: "Volvo FH 540", img1: "volvo1.jpg", img2: "volvo2.jpg", cam.camião: "rZkslM7.jpeg", cam.carroceria: "4DvpK6K.jpeg", cam.vidro: "AccQW10.jpeg", cam.prancha: "volvo_prancha.jwk" },
-      { nome: "Scania R500", img1: "scania1.jpg", img2: "scania2.jpg", cabine: "scania_cab.jwk", carreta: "scania_carreta.jwk", vidro: "scania_vidro.jwk", prancha: "scania_prancha.jwk" },
-      { nome: "Mercedes-Benz Actros", img1: "actros1.jpg", img2: "actros2.jpg", cabine: "mb_cab.jwk", carreta: "mb_carreta.jwk", vidro: "mb_vidro.jwk", prancha: "mb_prancha.jwk" },
-      { nome: "Volvo FH16 750", img1: "fh16_1.jpg", img2: "fh16_2.jpg", cabine: "fh16_cab.jwk", carreta: "fh16_carreta.jwk", vidro: "fh16_vidro.jwk", prancha: "fh16_prancha.jwk" },
-      { nome: "Scania 113H", img1: "113h1.jpg", img2: "113h2.jpg", cabine: "113h_cab.jwk", carreta: "113h_carreta.jwk", vidro: "113h_vidro.jwk", prancha: "113h_prancha.jwk" },
-      { nome: "DAF XF 105", img1: "daf1.jpg", img2: "daf2.jpg", cabine: "daf_cab.jwk", carreta: "daf_carreta.jwk", vidro: "daf_vidro.jwk", prancha: "daf_prancha.jwk" },
-      { nome: "Iveco Stralis", img1: "iveco1.jpg", img2: "iveco2.jpg", cabine: "iveco_cab.jwk", carreta: "iveco_carreta.jwk", vidro: "iveco_vidro.jwk", prancha: "iveco_prancha.jwk" },
-      { nome: "MAN TGX", img1: "man1.jpg", img2: "man2.jpg", cabine: "man_cab.jwk", carreta: "man_carreta.jwk", vidro: "man_vidro.jwk", prancha: "man_prancha.jwk" },
-      { nome: "Ford Cargo 2842", img1: "ford1.jpg", img2: "ford2.jpg", cabine: "ford_cab.jwk", carreta: "ford_carreta.jwk", vidro: "ford_vidro.jwk", prancha: "ford_prancha.jwk" },
-      { nome: "Scania P310", img1: "p310_1.jpg", img2: "p310_2.jpg", cabine: "p310_cab.jwk", carreta: "p310_carreta.jwk", vidro: "p310_vidro.jwk", prancha: "p310_prancha.jwk" },
+      { nome: "Volvo FH 540", img1: "volvo1.jpg", img2: "volvo2.jpg", camião: "rZkslM7.jpeg", carroceria: "4DvpK6K.jpeg", vidro: "AccQW10.jpeg", prancha: "volvo_prancha.jwk" },
+      { nome: "Scania R500", img1: "scania1.jpg", img2: "scania2.jpg", camião: "scania_cab.jwk", carreta: "scania_carreta.jwk", vidro: "scania_vidro.jwk", prancha: "scania_prancha.jwk" },
+      { nome: "Mercedes-Benz Actros", img1: "actros1.jpg", img2: "actros2.jpg", camião: "mb_cab.jwk", carreta: "mb_carreta.jwk", vidro: "mb_vidro.jwk", prancha: "mb_prancha.jwk" },
+      { nome: "Volvo FH16 750", img1: "fh16_1.jpg", img2: "fh16_2.jpg", camião: "fh16_cab.jwk", carreta: "fh16_carreta.jwk", vidro: "fh16_vidro.jwk", prancha: "fh16_prancha.jwk" },
+      { nome: "Scania 113H", img1: "113h1.jpg", img2: "113h2.jpg", camião: "113h_cab.jwk", carreta: "113h_carreta.jwk", vidro: "113h_vidro.jwk", prancha: "113h_prancha.jwk" },
+      { nome: "DAF XF 105", img1: "daf1.jpg", img2: "daf2.jpg", camião: "daf_cab.jwk", carreta: "daf_carreta.jwk", vidro: "daf_vidro.jwk", prancha: "daf_prancha.jwk" },
+      { nome: "Iveco Stralis", img1: "iveco1.jpg", img2: "iveco2.jpg", camião: "iveco_cab.jwk", carreta: "iveco_carreta.jwk", vidro: "iveco_vidro.jwk", prancha: "iveco_prancha.jwk" },
+      { nome: "MAN TGX", img1: "man1.jpg", img2: "man2.jpg", camião: "man_cab.jwk", carreta: "man_carreta.jwk", vidro: "man_vidro.jwk", prancha: "man_prancha.jwk" },
+      { nome: "Ford Cargo 2842", img1: "ford1.jpg", img2: "ford2.jpg", camião: "ford_cab.jwk", carreta: "ford_carreta.jwk", vidro: "ford_vidro.jwk", prancha: "ford_prancha.jwk" },
+      { nome: "Scania P310", img1: "p310_1.jpg", img2: "p310_2.jpg", camião: "p310_cab.jwk", carreta: "p310_carreta.jwk", vidro: "p310_vidro.jwk", prancha: "p310_prancha.jwk" },
     ];
 
     document.addEventListener("DOMContentLoaded", () => {
-      const container = document.body;
+      const container = document.getElementById("container");
+
       caminhoes.forEach(cam => {
         const div = document.createElement("div");
         div.className = "skin";
         div.innerHTML = `
           <p class="skin-title"><strong>${cam.nome}</strong></p>
+
           <div class="skin-images">
             <img src="${cam.img1}" alt="${cam.nome} 1">
             <img src="${cam.img2}" alt="${cam.nome} 2">
           </div>
-          <div class="code-block"><span class="code-label">SKINS CABINE</span>${cam.cabine}</div>
-          <div class="code-block"><span class="code-label">SKINS CARRETA</span>${cam.carreta}</div>
-          <div class="code-block"><span class="code-label">SKINS VIDRO</span>${cam.vidro}</div>
-          <div class="code-block"><span class="code-label">SKINS PRANCHA E BANDEIRA</span>${cam.prancha}</div>
+
+          <div class="code-block">
+            <span class="code-label">SKINS CAMIÃO</span>
+            ${cam.camião}
+          </div>
+          <div class="code-block">
+            <span class="code-label">SKINS CARROCERIA</span>
+            ${cam.carroceria || cam.carreta || ''}
+          </div>
+          <div class="code-block">
+            <span class="code-label">SKINS VIDRO</span>
+            ${cam.vidro}
+          </div>
+          <div class="code-block">
+            <span class="code-label">SKINS PRANCHA E BANDEIRA</span>
+            ${cam.prancha}
+          </div>
         `;
-        container.insertBefore(div, document.querySelector(".back"));
+        container.appendChild(div);
       });
     });
   </script>
-
-  <a href="index.html" class="back">⬅ Voltar</a>
 
 </body>
 </html>
