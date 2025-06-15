@@ -2,30 +2,33 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <title>Bem-vindo ao USMALKRIADOS</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecionando...</title>
   <style>
     body {
       margin: 0;
-      background: #0d0d0d;
-      color: #00ffff;
-      font-family: 'Arial', sans-serif;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      flex-direction: column;
+      color: #00ffff;
       text-align: center;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 1.6rem;
+      font-size: 24px;
       margin-bottom: 30px;
       text-shadow: 0 0 10px #00ffff;
+      animation: fadeIn 2s ease-in-out forwards;
     }
 
     .loader {
-      border: 6px solid #222;
+      border: 6px solid #1a1a1a;
       border-top: 6px solid #00ffff;
       border-radius: 50%;
       width: 50px;
@@ -37,14 +40,36 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .background-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at center, rgba(0,255,255,0.1) 0%, transparent 70%);
+      animation: moveBg 20s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes moveBg {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-25%, -25%); }
+    }
   </style>
   <script>
     setTimeout(() => {
       window.location.href = "https://discord.gg/HPh8G2AQ";
-    }, 3000); // Redireciona após 3 segundos
+    }, 10000); // 10 segundos = 10000ms
   </script>
 </head>
 <body>
+  <div class="background-animation"></div>
   <h1>BEM VINDO AO USMALKRIADOS💊🤪</h1>
   <div class="loader"></div>
 </body>
