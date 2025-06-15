@@ -18,6 +18,21 @@
       margin-bottom: 40px;
     }
 
+  /* Fundo animado */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url('global_truck_online_screenshot_20250613_222551.png') no-repeat center center;
+      background-size: cover;
+      filter: blur(6px) brightness(0.6); /* Menos blur e mais visível */
+      z-index: -1;
+      animation: deslizar 60s linear infinite;
+    }
+
+    
     .skin {
       border: 1px solid #00ffff;
       border-radius: 10px;
