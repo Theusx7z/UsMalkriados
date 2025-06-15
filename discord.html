@@ -1,17 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <!-- Foto de perfil -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links do Theus</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Rubik', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      min-height: 100vh;
+      padding-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Fundo animado */
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background: url('global_truck_online_screenshot_20250613_222551.png') no-repeat center center;
+      background-size: cover;
+      filter: blur(6px) brightness(0.6); /* Menos blur e mais visível */
+      z-index: -1;
+      animation: deslizar 60s linear infinite;
+    }
+
+    @keyframes deslizar {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-15%, -15%); }
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #00ffff;
+      margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      text-shadow: 0 0 8px #00ffff;
+      z-index: 1;
+    }
+
+    .links {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 90%;
+      max-width: 360px;
+      z-index: 1;
+    }
+
+    .links a {
+      text-decoration: none;
+      background: #00ffff22;
+      border: 1px solid #00ffff;
+      padding: 14px 20px;
+      border-radius: 10px;
+      color: #00ffff;
+      font-size: 1rem;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .links a:hover {
+      background: #00ffff44;
+      transform: scale(1.03);
+      box-shadow: 0 0 10px #00ffff;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ccc;
+      z-index: 1;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fundo animado com blur reduzido -->
+  <div class="background"></div>
+
+  <!-- Foto de perfil -->
   <img src="896e55ba-ed12-4988-8fed-e3d7b780dbc1.jpeg" alt="Usmalkriados" class="profile-img" />
 
   <!-- Nome -->
-  <h3>@Us_Malkriados_</h3>
-
-  <!-- Links -->
-  <div class="links">
-    <a url="https://discord.gg/HPh8G2AQ" target="_blank">Discord 📸</a>
-    <a href="https://chat.whatsapp.com/SEULINK" target="_blank">Grupo do WhatsApp 💬</a>
-    <a href="discord.html">Nosso Discord✅</a>
-    <a href="skins.html">Links Das Skins 🚛</a>
-
-  </div>
-
+  <h1>@Us_Malkriados_</h1>
